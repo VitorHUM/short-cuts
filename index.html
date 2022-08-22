@@ -10,30 +10,67 @@
 </head>
 
 <body>
-  <nav>
-    <div class="nav-container">
+  <header>
+    <div class="header-container">
       <h1>&ltshort&gt&lt/cuts&gt</h1>
     </div>
+  </header>
 
-  </nav>
+  <main>
+    <div class="main-container">
+      <section class="menu-container">
+        <button id="btn-play" class="button">Jogar</button>
+        <button id="btn-about" class="button">Sobre</button>
+      </section>
 
-  <section class="menu">
-    <div class="menu-container">
-      <button id="btn-play" class="button">Jogar</button>
-      <button id="btn-about" class="button btn-sobre">Sobre</button>
+      <section class="select-container">
+        <label for="name">NOME</label>
+        <input type="text" id="name" placeholder="Seu nome">
+        <hr>
+        <div class="characters">
+          <div class="vitor">
+            <img src="assets/boneco.png" alt="">
+            <button class="button btn-difficult">Vitor</button>
+          </div>
+          <div class="jino">
+            <img src="assets/boneco.png" alt="">
+            <button class="button btn-difficult">Jino</button>
+          </div>
+          <div class="karen">
+            <img src="assets/boneco.png" alt="">
+            <button class="button btn-difficult">Karen</button>
+          </div>
+        </div>
+      </section>
+
+      <section class="game-container">
+        <div class="infos">
+          <h3>Vidas: <span>Nvidas</span></h3>
+          <img src="assets/clock.png" alt="Relogio" class="clock">
+          <span id="seconds">10</span>
+        </div>
+        <div class="question">
+          <h2>PERGUNTA</h2>
+        </div>
+        <button id="alt1" class="button">Alternativa 1</button>
+        <button id="alt2" class="button">Alternativa 2</button>
+        <button id="alt3" class="button">Alternativa 3</button>
+        <button id="alt4" class="button">Alternativa 4</button>
+      </section>
+
+      <section class="about-container">
+        <p>Jogo desenvolvido para o #1 Projeto do bootcamp de Web Development na Ironhack São Paulo, turma #85WDFT.</p>
+        <p>O jogo consiste em um quiz sobre atalhos do Visual Studio Code, a principal ferramenta utilizada para codar. O mesmo foi feito para auxiliar os alunos da turma.</p>
+        <p>Para começar o jogador insere seu nome e seleciona uma dificuldade, o jogador tem 3 vidas e 10s para responder cada questão, oque varia é apenas a dificuldade das questões.</p>
+        <p>O jogador perde uma vida ao errar uma questão, ou deixar de respondê-la no tempo necessário.</p>
+        <p>O jogo acaba quando as vidas do jogador chegam a 0.</p>
+        <div class="back">
+          <button id="btn-back" class="button">
+            < Menu</button>
+        </div>
+      </section>
     </div>
-  </section>
-
-  <section class="game">
-    <div class="game-container">
-    </div>
-  </section>
-
-  <section class="about">
-    <div class="about-container">
-
-    </div>
-  </section>
+  </main>
 
   <footer>
     <div class="footer-container">
@@ -51,7 +88,11 @@
     </div>
   </footer>
 
+
+
   <script src="https://kit.fontawesome.com/0d0f8ddc35.js" crossorigin="anonymous"></script>
+  <script src="js/game.js"></script>
+  <script src="js/index.js"></script>
 </body>
 
 </html>
