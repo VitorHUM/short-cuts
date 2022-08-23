@@ -1,3 +1,5 @@
+const quiz = new Quiz();
+
 // CONTAINERS
 const menu = document.querySelector(".menu-container");
 const game = document.querySelector(".game-container");
@@ -15,13 +17,8 @@ const btnHome = document.querySelector("#home");
 
 // INPUTS & ASSETS
 const inputName = document.querySelector("#input-name");
-const difficult = document.querySelector(".btn-difficult").innerText;
 const time = document.querySelector("#time");
 const question = document.querySelector(".question");
-const alternativeA = document.querySelector("#altA");
-const alternativeB = document.querySelector("#altB");
-const alternativeC = document.querySelector("#altC");
-const alternativeD = document.querySelector("#altD");
 
 btnPlay.addEventListener("click", () => {
   menu.style.display = "none";
@@ -31,36 +28,38 @@ btnPlay.addEventListener("click", () => {
   btnDifficult.forEach((diffs) => {
     diffs.addEventListener("click", () => {
       if (inputName.value === "") {
-        alert(`FALTOU O NOME\n\nDIFICULDADE: ${difficult}`);
+        alert(`FALTOU O NOME`);
         return;
       }
 
       select.style.display = "none";
       game.style.display = "flex";
 
-      let count = 10;
-      let clock = setInterval(() => {
-        count--;
-        time.innerText = `0${+time.innerText - 1}`;
-        if (count === 0) {
-          setTimeout(() => {
-            clearInterval(clock);
-            alert("ACABOU O TEMPO");
-          }, 100);
-        }
-      }, 1000);
+      // let count = 10;
+      // let clock = setInterval(() => {
+      //   count--;
+      //   time.innerText = `0${count}`;
+      //   if (count === 0) {
+      //     setTimeout(() => {
+      //       clearInterval(clock);
+      //       alert("ACABOU O TEMPO");
+      //     }, 100);
+      //   }
+      // }, 1000);
 
-      btnAlternative.forEach((alts) => {
-        alts.addEventListener("click", () => {
-          game.style.display = "none";
-          end.style.display = "flex";
+      // btnAlternative.forEach((alts) => {
+      //   alts.addEventListener("click", () => {
+      //     game.style.display = "none";
+      //     end.style.display = "flex";
 
-          btnHome.addEventListener("click", () => {
-            end.style.display = "none";
-            menu.style.display = "flex";
-          });
-        });
-      });
+      //     btnHome.addEventListener("click", () => {
+      //       end.style.display = "none";
+      //       menu.style.display = "flex";
+      //     });
+      //   });
+      // });
+
+      setupGame(inputName.value, diffs.innerText);
     });
   });
 });
@@ -73,3 +72,20 @@ btnAbout.addEventListener("click", () => {
     menu.style.display = "flex";
   });
 });
+
+function setupGame(name, difficult) {
+  quiz.settingUpGame(name, difficult);
+  question.innerText = quiz.roundQuestion.question;
+  quiz.roundQuestion.alternatives.sort(() => Math.random() - 0.5);
+  btnAlternative.forEach((alternative, index) => {
+    alternative.innerText = quiz.roundQuestion.alternatives[index];
+    if (quiz.roundQuestion.alternatives[index] === quiz.roundQuestion.answer) {
+      alternative.id = "correct";
+    } else {
+      alternative.id = "wrong";
+    }
+    alternative.addEventListener("click", () => {
+      quiz.checkAnswer(alternative);
+    });
+  });
+}

@@ -177,14 +177,29 @@ label {
   height: 60px;
 }
 
+#time {
+  font-weight: 700;
+  font-size: 16px;
+  text-shadow: 0px 0px 2px #808080;
+}
+
 .clock {
   width: 40px;
   position: absolute;
+  bottom: 8px;
   right: 5.5px;
 }
 
-.life {
+.life-easy {
   width: 80px;
+}
+
+.life-normal {
+  width: 60px;
+}
+
+.life-hard {
+  width: 35px;
 }
 
 .end-container {
