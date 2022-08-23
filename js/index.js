@@ -60,6 +60,7 @@ btnPlay.addEventListener("click", () => {
       // });
 
       setupGame(inputName.value, diffs.innerText);
+      quiz.startTimer();
     });
   });
 });
@@ -75,6 +76,10 @@ btnAbout.addEventListener("click", () => {
 
 function setupGame(name, difficult) {
   quiz.settingUpGame(name, difficult);
+  printQuestion();
+}
+
+function printQuestion() {
   question.innerText = quiz.roundQuestion.question;
   quiz.roundQuestion.alternatives.sort(() => Math.random() - 0.5);
   btnAlternative.forEach((alternative, index) => {
@@ -84,8 +89,16 @@ function setupGame(name, difficult) {
     } else {
       alternative.id = "wrong";
     }
+
     alternative.addEventListener("click", () => {
+      clearInterval(quiz.intervalId);
       quiz.checkAnswer(alternative);
+      if (quiz.checkStatus()) {
+        game.style.display = "none";
+        end.style.display = "flex";
+      } else {
+        printQuestion();
+      }
     });
   });
 }

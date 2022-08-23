@@ -10,6 +10,9 @@ class Quiz {
     this.roundQuestion;
     this.round = 0;
     this.streak = 0;
+    this.correct = 0;
+    this.wrong = 0;
+    this.intervalId;
   }
 
   settingUpGame(name, difficult) {
@@ -51,24 +54,46 @@ class Quiz {
     if (answer.innerText === this.roundQuestion.answer) {
       // PLAY SOUND
       this.streak++;
+      this.correct++;
       answer.style.backgroundColor = "#08ff31";
       this.settingNextQuestion();
     } else {
       // PLAY SOUND
+      this.settingNextQuestion();
       this.streak = 0;
+      this.wrong++;
       answer.style.backgroundColor = "#ff0842";
       const correctAnswer = document.querySelector("#correct");
       correctAnswer.style.backgroundColor = "#08ff31";
       this.lifes--;
+      console.log(this.lifes);
+      if (this.lifes === 0) {
+        return;
+      }
       lifesImg.src = `./assets/${this.difficult}-${this.lifes}-lifes.png`;
     }
   }
 
-  //   checkStatus() {
-  //     if(this.life === 0) {
-  //     } else if (this.streak === 3) {
-  // GANHA PODER
-  // this.streak = 0;
-  //     }
-  //   }
+  startTimer() {
+    this.intervalId = setInterval(() => {
+      this.time--;
+      time.innerText = `0${this.time}`;
+      if (this.time === 0) {
+        setTimeout(() => {
+          clearInterval(this.intervalId);
+          this.lifes--;
+        }, 100);
+      }
+    }, 1000);
+  }
+
+  checkStatus() {
+    if (this.lifes === 0) {
+      return true;
+    } else if (this.streak === 3) {
+      this.streak = 0;
+    }
+
+    return false;
+  }
 }
