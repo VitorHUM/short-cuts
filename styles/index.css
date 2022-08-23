@@ -175,6 +175,7 @@ hr {
 
 p {
   font-weight: 500;
+  color: black;
 }
 
 .back {
@@ -304,7 +305,7 @@ a {
 .button:hover {
   text-decoration: none;
   background-color: #f1f1f1;
-  border-color: #010101;
+  border-color: #221b1c;
 }
 
 .button:active {
