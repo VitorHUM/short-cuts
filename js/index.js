@@ -18,7 +18,7 @@ const btnHome = document.querySelector("#home");
 // INPUTS & ASSETS
 const inputName = document.querySelector("#input-name");
 const time = document.querySelector("#time");
-const question = document.querySelector(".question");
+const question = document.querySelector(".question-display");
 
 btnPlay.addEventListener("click", () => {
   menu.style.display = "none";
@@ -35,18 +35,6 @@ btnPlay.addEventListener("click", () => {
       select.style.display = "none";
       game.style.display = "flex";
 
-      // let count = 10;
-      // let clock = setInterval(() => {
-      //   count--;
-      //   time.innerText = `0${count}`;
-      //   if (count === 0) {
-      //     setTimeout(() => {
-      //       clearInterval(clock);
-      //       alert("ACABOU O TEMPO");
-      //     }, 100);
-      //   }
-      // }, 1000);
-
       // btnAlternative.forEach((alts) => {
       //   alts.addEventListener("click", () => {
       //     game.style.display = "none";
@@ -59,7 +47,7 @@ btnPlay.addEventListener("click", () => {
       //   });
       // });
 
-      setupGame(inputName.value, diffs.innerText);
+      setupGame(inputName.value, diffs.value);
       quiz.startTimer();
     });
   });
@@ -92,13 +80,27 @@ function printQuestion() {
 
     alternative.addEventListener("click", () => {
       clearInterval(quiz.intervalId);
-      quiz.checkAnswer(alternative);
-      if (quiz.checkStatus()) {
+
+      if (quiz.checkAnswer(alternative) === "dead") {
         game.style.display = "none";
         end.style.display = "flex";
+        btnHome.addEventListener('click', () => {
+          // resetGame();
+          end.style.display = "none";
+          menu.style.display = "flex";
+        })
       } else {
         printQuestion();
+        quiz.startTimer();
       }
+
+      // quiz.checkAnswer(alternative);
+      // if (quiz.checkStatus() === "dead") {
+      //   game.style.display = "none";
+      //   end.style.display = "flex";
+      // } else {
+      //   printQuestion();
+      // }
     });
   });
 }

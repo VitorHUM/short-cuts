@@ -34,8 +34,8 @@ body {
 
 header {
   margin: 0px 16px;
-  width: 60vw;
-  min-width: 280px;
+  width: 50vw;
+  min-width: 320px;
 }
 
 .header-container {
@@ -55,12 +55,12 @@ header {
 
 main {
   margin: 4px 16px;
-  width: 60vw;
-  min-width: 280px;
+  width: 50vw;
+  min-width: 320px;
 }
 
 .main-container {
-  padding: 8px 16px 12px 16px;
+  padding: 16px 16px 20px 16px;
   background-color: #e3e3e3;
   border: 1px solid #221b1c;
   border-radius: 4px;
@@ -90,7 +90,7 @@ main {
 
 .name-container {
   display: flex;
-  width: 100%;
+  width: 75%;
   justify-content: center;
   align-items: center;
   padding: 8px 16px;
@@ -110,7 +110,7 @@ label {
 }
 
 #input-name {
-  width: 20%;
+  width: 25%;
   background-color: #e3e3e3;
   border: 1px solid #221b1c;
   border-radius: 4px;
@@ -127,6 +127,10 @@ label {
 #input-name:focus {
   background-color: #f1f1f1;
   box-shadow: 0px 0px 4px #221b1c;
+}
+
+.select-difficult {
+  margin: 16px 0 8px 0;
 }
 
 .difficults {
@@ -164,7 +168,7 @@ label {
 
 .life-time {
   display: flex;
-  width: 25%;
+  width: 20%;
   justify-content: space-between;
   align-items: center;
   padding: 8px 16px;
@@ -190,16 +194,31 @@ label {
   right: 5.5px;
 }
 
+.question-box {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 8px 16px;
+  background-color: #d2d2d2;
+  border: 1px solid #221b1c;
+  border-radius: 4px;
+  color: #221b1c;
+  box-shadow: 0px 0px 4px #221b1c;
+  font-size: 12px;
+  text-shadow: 0px 0px 2px #808080;
+  margin: 24px 0 4px 0;
+}
+
 .life-easy {
-  width: 80px;
+  width: 100px;
 }
 
 .life-normal {
-  width: 60px;
+  width: 80px;
 }
 
 .life-hard {
-  width: 35px;
+  width: 40px;
 }
 
 .end-container {
@@ -262,8 +281,8 @@ li {
 
 footer {
   margin: 0px 16px;
-  width: 60vw;
-  min-width: 280px;
+  width: 50vw;
+  min-width: 320px;
 }
 
 .footer-container {
@@ -377,18 +396,38 @@ a {
   padding: 12px 40px;
 }
 
-.button:hover {
+.button-alt {
+  width: 280px;
+  appearance: button;
+  background-color: #d2d2d2;
+  border: 1px solid #221b1c;
+  border-radius: 4px;
+  box-shadow: #808080 4px 4px 0 0, #221b1c 4px 4px 0 1px;
+  color: #221b1c;
+  cursor: pointer;
+  display: inline-block;
+  font-family: "Source Code Pro", sans-serif;
+  font-size: 1rem;
+  font-weight: 700;
+  line-height: 20px;
+  padding: 8px 24px;
+}
+
+.button:hover,
+.button-alt:hover {
   text-decoration: none;
   background-color: #f1f1f1;
   border-color: #221b1c;
 }
 
-.button:active {
+.button:active,
+.button-alt:active {
   box-shadow: rgba(0, 0, 0, 0.125) 0 3px 5px inset;
   outline: 0;
 }
 
-.button:not([disabled]):active {
+.button:not([disabled]):active,
+.button-alt:not([disabled]):active {
   box-shadow: #808080 2px 2px 0 0, #221b1c 2px 2px 0 1px;
   transform: translate(2px, 2px);
 }
