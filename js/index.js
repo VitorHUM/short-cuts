@@ -35,18 +35,6 @@ btnPlay.addEventListener("click", () => {
       select.style.display = "none";
       game.style.display = "flex";
 
-      // btnAlternative.forEach((alts) => {
-      //   alts.addEventListener("click", () => {
-      //     game.style.display = "none";
-      //     end.style.display = "flex";
-
-      //     btnHome.addEventListener("click", () => {
-      //       end.style.display = "none";
-      //       menu.style.display = "flex";
-      //     });
-      //   });
-      // });
-
       setupGame(inputName.value, diffs.value);
       quiz.startTimer();
     });
@@ -84,11 +72,11 @@ function printQuestion() {
       if (quiz.checkAnswer(alternative) === "dead") {
         game.style.display = "none";
         end.style.display = "flex";
-        btnHome.addEventListener('click', () => {
+        btnHome.addEventListener("click", () => {
           // resetGame();
           end.style.display = "none";
           menu.style.display = "flex";
-        })
+        });
       } else {
         printQuestion();
         quiz.startTimer();
