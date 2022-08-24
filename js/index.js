@@ -19,6 +19,9 @@ const btnHome = document.querySelector("#home");
 const inputName = document.querySelector("#input-name");
 const time = document.querySelector("#time");
 const question = document.querySelector(".question-display");
+const endName = document.querySelector(".end-name");
+const endCorrect = document.querySelector(".end-correct");
+const endWrong = document.querySelector(".end-wrongs");
 
 btnPlay.addEventListener("click", () => {
   menu.style.display = "none";
@@ -72,6 +75,7 @@ function printQuestion() {
       if (quiz.checkAnswer(alternative) === "dead") {
         game.style.display = "none";
         end.style.display = "flex";
+        // setupEnd();
         btnHome.addEventListener("click", () => {
           // resetGame();
           end.style.display = "none";
