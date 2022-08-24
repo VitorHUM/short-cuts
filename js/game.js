@@ -1,4 +1,6 @@
 const lifesImg = document.querySelector(".life");
+const audioCorrect = new Audio("./assets/audio/audio-correct.mp3");
+audioCorrect.volume = 0.1;
 
 class Quiz {
   constructor() {
@@ -68,7 +70,7 @@ class Quiz {
 
   checkAnswer(answer) {
     if (answer.innerText === this.roundQuestion.answer) {
-      // PLAY SOUND
+      audioCorrect.play();
       this.streak++;
       this.correct++;
       answer.style.backgroundColor = "#08ff31";
@@ -77,7 +79,7 @@ class Quiz {
       //   this.settingNextQuestion();
       // }, 1000);
     } else {
-      // PLAY SOUND
+      audioCorrect.play();
       this.streak = 0;
       this.wrong++;
       answer.style.backgroundColor = "#ff0842";
