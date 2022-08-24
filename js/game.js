@@ -1,4 +1,5 @@
 const lifesImg = document.querySelector(".life");
+const endPic = document.querySelector(".end-picture");
 const audioCorrect = new Audio("./assets/audio/audio-correct.mp3");
 audioCorrect.volume = 0.1;
 
@@ -10,38 +11,36 @@ class Quiz {
     this.questions;
     this.roundQuestion;
     this.round = 0;
-    this.streak = 0;
     this.correct = 0;
     this.wrong = 0;
+    this.result;
     this.intervalId;
   }
 
   settingUpGame(name, difficult) {
     this.name = name;
     if (difficult === "easy") {
-      this.difficult = "easyQuestions";
+      this.difficult = difficult;
       this.lifes = 3;
       lifesImg.classList.add("life-easy");
-      lifesImg.src = `./assets/${this.difficult}-${this.lifes}-lifes.png`;
-      this.questions = questions.easyQuestions.sort(() => Math.random() - 0.5);
+      lifesImg.src = `./assets/life/${this.difficult}-${this.lifes}-lifes.png`;
+      this.questions = questions.easy.sort(() => Math.random() - 0.5);
       this.roundQuestion = this.questions[this.round];
     }
     if (difficult === "normal") {
-      this.difficult = "normalQuestions";
+      this.difficult = difficult;
       this.lifes = 2;
       lifesImg.classList.add("life-normal");
-      lifesImg.src = `./assets/${this.difficult}-${this.lifes}-lifes.png`;
-      this.questions = questions.normalQuestions.sort(
-        () => Math.random() - 0.5
-      );
+      lifesImg.src = `./assets/life/${this.difficult}-${this.lifes}-lifes.png`;
+      this.questions = questions.normal.sort(() => Math.random() - 0.5);
       this.roundQuestion = this.questions[this.round];
     }
     if (difficult === "hard") {
-      this.difficult = "hardQuestions";
+      this.difficult = difficult;
       this.lifes = 1;
       lifesImg.classList.add("life-hard");
-      lifesImg.src = `./assets/${this.difficult}-${this.lifes}-lifes.png`;
-      this.questions = questions.hardQuestions.sort(() => Math.random() - 0.5);
+      lifesImg.src = `./assets/life/${this.difficult}-${this.lifes}-lifes.png`;
+      this.questions = questions.hard.sort(() => Math.random() - 0.5);
       this.roundQuestion = this.questions[this.round];
     }
   }
@@ -49,63 +48,80 @@ class Quiz {
   settingNextQuestion() {
     this.round++;
     this.roundQuestion = this.questions[this.round];
-    // const clearColors = document.querySelectorAll(".btn-alternative");
-    // clearColors.style.backgroundColor = "blue";
   }
 
-  startTimer() {
-    let timer = 10;
-    this.intervalId = setInterval(() => {
-      timer--;
-      time.innerText = `0${timer}`;
-      if (timer === 0) {
-        setTimeout(() => {
-          clearInterval(this.intervalId);
-          this.lifes--;
-          console.log(`PERDEU VIDA\nVIDAS = ${this.lifes}`);
-        }, 100);
-      }
-    }, 1000);
-  }
+  // startTimer() {
+  //   let timer = 8;
+  //   this.intervalId = setInterval(() => {
+  //     timer--;
+  //     time.innerText = `0${timer}`;
+  //     if (timer === 0) {
+  //       setTimeout(() => {
+  //         clearInterval(this.intervalId);
+  //         this.wrongAnswer();
+  //       }, 100);
+  //     }
+  //   }, 1000);
+  // }
 
   checkAnswer(answer) {
     if (answer.innerText === this.roundQuestion.answer) {
       audioCorrect.play();
-      this.streak++;
       this.correct++;
       answer.style.backgroundColor = "#08ff31";
       this.settingNextQuestion();
-      // setTimeout(() => {
-      //   this.settingNextQuestion();
-      // }, 1000);
     } else {
-      audioCorrect.play();
-      this.streak = 0;
-      this.wrong++;
       answer.style.backgroundColor = "#ff0842";
-      const correctAnswer = document.querySelector("#correct");
-      correctAnswer.style.backgroundColor = "#08ff31";
-      this.lifes--;
-      console.log(`PERDEU VIDA\nVIDAS = ${this.lifes}`);
-      if (this.lifes === 0) {
-        return "dead";
-      } else {
-        lifesImg.src = `./assets/${this.difficult}-${this.lifes}-lifes.png`;
-        this.settingNextQuestion();
-      }
-      // setTimeout(() => {
-      //   this.settingNextQuestion();
-      // }, 1000);
+      this.wrongAnswer();
     }
   }
 
-  // checkStatus() {
-  //   if (this.lifes === 0) {
-  //     return "dead";
-  //   } else if (this.streak === 3) {
-  //     this.streak = 0;
-  //   }
+  wrongAnswer() {
+    audioCorrect.play();
+    this.streak = 0;
+    this.wrong++;
+    const correctAnswer = document.querySelector("#correct");
+    correctAnswer.style.backgroundColor = "#08ff31";
+    this.lifes--;
+    this.checkStatus();
+  }
 
-  //   return "alive";
-  // }
+  checkStatus() {
+    console.log(this.round);
+    console.log(this.questions.length - 1);
+    if (this.lifes === 0 || this.round === this.questions.length - 1) {
+      console.log("checkstatus dentro");
+      return "dead";
+    } else {
+      lifesImg.src = `./assets/life/${this.difficult}-${this.lifes}-lifes.png`;
+      this.settingNextQuestion();
+      setTimeout(() => {
+        printQuestion();
+        // this.startTimer();
+      }, 2000);
+    }
+  }
+
+  setupEnd() {
+    if (this.correct / (this.correct + this.wrong) >= 0.7) {
+      this.result = "good";
+    } else {
+      this.result = "bad";
+    }
+    endPic.src = `./assets/${this.difficult}/${this.result}.png`;
+  }
+
+  resetGame() {
+    this.name = "";
+    this.difficult = "";
+    this.lifes = 0;
+    this.questions = "";
+    this.roundQuestion = "";
+    this.round = 0;
+    this.streak = 0;
+    this.correct = 0;
+    this.wrong = 0;
+    this.result = 0;
+    this.intervalId = "";
+  }
 }

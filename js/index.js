@@ -21,7 +21,7 @@ const time = document.querySelector("#time");
 const question = document.querySelector(".question-display");
 const endName = document.querySelector(".end-name");
 const endCorrect = document.querySelector(".end-correct");
-const endWrong = document.querySelector(".end-wrongs");
+const endWrong = document.querySelector(".end-wrong");
 
 btnPlay.addEventListener("click", () => {
   menu.style.display = "none";
@@ -39,7 +39,6 @@ btnPlay.addEventListener("click", () => {
       game.style.display = "flex";
 
       setupGame(inputName.value, diffs.value);
-      quiz.startTimer();
     });
   });
 });
@@ -58,41 +57,50 @@ function setupGame(name, difficult) {
   printQuestion();
 }
 
+btnAlternative.forEach((alternative) => {
+  alternative.addEventListener("click", () => {
+    console.log(`click`);
+
+    quiz.checkAnswer(alternative);
+
+    if (quiz.checkStatus() === "dead") {
+      checkLose();
+    } else {
+      setTimeout(() => {
+        printQuestion();
+      }, 2000);
+    }
+  });
+});
+
+function checkLose() {
+  console.log("dentro do if");
+  game.style.display = "none";
+  end.style.display = "flex";
+  quiz.setupEnd();
+  endName.innerText = `${quiz.name}`;
+  endCorrect.innerText = `${quiz.correct}`;
+  endWrong.innerText = `${quiz.wrong}`;
+  const endMsg = document.querySelector(`.${quiz.difficult}-${quiz.result}`);
+  endMsg.style.display = "flex";
+}
+
+btnHome.addEventListener("click", () => {
+  quiz.resetGame();
+  end.style.display = "none";
+  menu.style.display = "flex";
+});
+
 function printQuestion() {
   question.innerText = quiz.roundQuestion.question;
   quiz.roundQuestion.alternatives.sort(() => Math.random() - 0.5);
   btnAlternative.forEach((alternative, index) => {
+    alternative.style.backgroundColor = "#d2d2d2";
     alternative.innerText = quiz.roundQuestion.alternatives[index];
     if (quiz.roundQuestion.alternatives[index] === quiz.roundQuestion.answer) {
       alternative.id = "correct";
     } else {
       alternative.id = "wrong";
     }
-
-    alternative.addEventListener("click", () => {
-      clearInterval(quiz.intervalId);
-
-      if (quiz.checkAnswer(alternative) === "dead") {
-        game.style.display = "none";
-        end.style.display = "flex";
-        // setupEnd();
-        btnHome.addEventListener("click", () => {
-          // resetGame();
-          end.style.display = "none";
-          menu.style.display = "flex";
-        });
-      } else {
-        printQuestion();
-        quiz.startTimer();
-      }
-
-      // quiz.checkAnswer(alternative);
-      // if (quiz.checkStatus() === "dead") {
-      //   game.style.display = "none";
-      //   end.style.display = "flex";
-      // } else {
-      //   printQuestion();
-      // }
-    });
   });
 }

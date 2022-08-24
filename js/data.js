@@ -1,5 +1,5 @@
 const questions = {
-  easyQuestions: [
+  easy: [
     {
       question: "Atalho para: Copiar linha ou seleção",
       alternatives: ["Ctrl + X", "Ctrl + Z", "Ctrl + V", "Ctrl + C"],
@@ -26,12 +26,27 @@ const questions = {
       answer: "Ctrl + B",
     },
     {
+      question: "Atalho para: Criar novo arquivo",
+      alternatives: ["Ctrl + N", "Ctrl + A ", "Ctrl + Alt + N", "Ctrl + J"],
+      answer: "Ctrl + N",
+    },
+    {
       question: "Atalho para: Comentar/Descomentar a linha",
       alternatives: ["Ctrl + C", "Ctrl + /", "Ctrl + *", "Ctrl + `"],
       answer: "Ctrl + /",
     },
+    {
+      question: "Atalho para: Entrar no modo tela cheia",
+      alternatives: ["F11", "F12", "F10", "F9"],
+      answer: "F11",
+    },
+    {
+      question: "Atalho para: Desfazer",
+      alternatives: ["Ctrl + Z", "Ctrl + U", "Ctrl + D", "Ctrl + R"],
+      answer: "Ctrl + Z",
+    },
   ],
-  normalQuestions: [
+  normal: [
     {
       question: "Atalho para: Abrir as configurações do usuário",
       alternatives: [
@@ -41,6 +56,11 @@ const questions = {
         "Ctrl + Shift + ,",
       ],
       answer: "Ctrl + ,",
+    },
+    {
+      question: "Atalho para: Refazer",
+      alternatives: ["Ctrl + Y", "Ctrl + R", "Ctrl + Z", "Ctrl + S"],
+      answer: "Ctrl + Y",
     },
     {
       question: "Atalho para: Mostrar lista de comandos",
@@ -73,6 +93,16 @@ const questions = {
       answer: "Ctrl + Shift + `",
     },
     {
+      question: "Atalho para: Ir para linha",
+      alternatives: [
+        "Ctrl + G + número da linha",
+        "Ctrl + F + número da linha",
+        "Ctrl + L + número da linha",
+        "Ctrl + L + número da linha",
+      ],
+      answer: "Ctrl + G + número da linha",
+    },
+    {
       question: "Atalho para: Mover linha para cima ou baixo",
       alternatives: [
         "Ctrl + ↑/↓",
@@ -83,7 +113,7 @@ const questions = {
       answer: "Alt + ↑/↓",
     },
   ],
-  hardQuestions: [
+  hard: [
     {
       question: "Atalho para: Deletar linha",
       alternatives: [
@@ -128,6 +158,16 @@ const questions = {
       question: "Atalho para: Entrar no modo Zen",
       alternatives: ["Ctrl + F1", "Ctrl + K M", "Ctrl + Z M", "Ctrl + K Z"],
       answer: "Ctrl + K Z",
+    },
+    {
+      question: "Atalho para: Recolher todos blocos de execução",
+      alternatives: [
+        "Ctrl + K Ctrl + 0",
+        "Ctrl + K Ctrl + F",
+        "Ctrl + K Ctrl + R",
+        "Ctrl + K Z",
+      ],
+      answer: "Ctrl + K Ctrl + 0",
     },
   ],
 };
