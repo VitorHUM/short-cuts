@@ -89,10 +89,7 @@ class Quiz {
   }
 
   checkStatus() {
-    console.log(this.round);
-    console.log(this.questions.length - 1);
     if (this.lifes === 0 || this.round === this.questions.length - 1) {
-      console.log("checkstatus dentro");
       return "dead";
     } else {
       lifesImg.src = `./assets/${this.difficult}/${this.lifes}-lifes.png`;

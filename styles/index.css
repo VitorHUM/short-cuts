@@ -1,16 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=Source+Code+Pro:wght@300;500;700;900&display=swap");
 
-/* 
-  light-grey: #e3e3e3,
-  hover-grey: #f7f7f7,
-  grey: #808080,
-  dark-grey: #3b3b3b,
-  black-grey: #221b1c,
-  red: #ff0842,
-  green: #08ff31,
-  blue: #08daff, 
-*/
-
 * {
   font-family: "Source Code Pro", sans-serif;
   margin: 0;

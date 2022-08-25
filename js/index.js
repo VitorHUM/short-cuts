@@ -59,7 +59,6 @@ function setupGame(name, difficult) {
 
 btnAlternative.forEach((alternative) => {
   alternative.addEventListener("click", () => {
-    console.log(`click`);
 
     quiz.checkAnswer(alternative);
 
@@ -74,7 +73,6 @@ btnAlternative.forEach((alternative) => {
 });
 
 function checkLose() {
-  console.log("dentro do if");
   game.style.display = "none";
   end.style.display = "flex";
   quiz.setupEnd();
