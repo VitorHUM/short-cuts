@@ -59,11 +59,14 @@ function setupGame(name, difficult) {
 
 btnAlternative.forEach((alternative) => {
   alternative.addEventListener("click", () => {
+    clearInterval(quiz.intervalId);
 
     quiz.checkAnswer(alternative);
 
     if (quiz.checkStatus() === "dead") {
-      checkLose();
+      setTimeout(() => {
+        settingUpEnd();
+      }, 2000);
     } else {
       setTimeout(() => {
         printQuestion();
@@ -72,10 +75,10 @@ btnAlternative.forEach((alternative) => {
   });
 });
 
-function checkLose() {
+function settingUpEnd() {
   game.style.display = "none";
   end.style.display = "flex";
-  quiz.setupEnd();
+  quiz.setResult();
   endName.innerText = `${quiz.name}`;
   endCorrect.innerText = `${quiz.correct}`;
   endWrong.innerText = `${quiz.wrong}`;
@@ -84,11 +87,7 @@ function checkLose() {
 }
 
 btnHome.addEventListener("click", () => {
-  const endMsg = document.querySelector(`.${quiz.difficult}-${quiz.result}`);
-  endMsg.style.display = "none";
-  quiz.resetGame();
-  end.style.display = "none";
-  menu.style.display = "flex";
+  document.location.reload(true);
 });
 
 function printQuestion() {
@@ -103,4 +102,5 @@ function printQuestion() {
       alternative.id = "wrong";
     }
   });
+  quiz.startTimer();
 }

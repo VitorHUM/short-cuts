@@ -1,5 +1,6 @@
 const lifesImg = document.querySelector(".life");
 const endPic = document.querySelector(".end-picture");
+const timeDisplay = document.querySelector("#time");
 
 class Quiz {
   constructor() {
@@ -48,19 +49,35 @@ class Quiz {
     this.roundQuestion = this.questions[this.round];
   }
 
-  // startTimer() {
-  //   let timer = 8;
-  //   this.intervalId = setInterval(() => {
-  //     timer--;
-  //     time.innerText = `0${timer}`;
-  //     if (timer === 0) {
-  //       setTimeout(() => {
-  //         clearInterval(this.intervalId);
-  //         this.wrongAnswer();
-  //       }, 100);
-  //     }
-  //   }, 1000);
-  // }
+  startTimer() {
+    let timer = 10;
+    timeDisplay.style.color = "#221b1c";
+    this.intervalId = setInterval(() => {
+      if (timer <= 4) {
+        timeDisplay.style.color = "#ff0842";
+      }
+      if (timer === 0) {
+        return;
+      }
+      timer--;
+      time.innerText = `0${timer}`;
+
+      if (timer <= 0) {
+        clearInterval(this.intervalId);
+
+        this.wrongAnswer();
+
+        setTimeout(() => {
+          if (this.lifes === 0) {
+            settingUpEnd();
+            return;
+          }
+          lifesImg.src = `./assets/${this.difficult}/${this.lifes}-lifes.png`;
+          printQuestion();
+        }, 2000);
+      }
+    }, 1000);
+  }
 
   checkAnswer(answer) {
     if (answer.innerText === this.roundQuestion.answer) {
@@ -80,12 +97,11 @@ class Quiz {
     const audioWrong = new Audio(`./assets/${this.difficult}/wrong.mp3`);
     audioWrong.volume = 0.1;
     audioWrong.play();
-    this.streak = 0;
     this.wrong++;
     const correctAnswer = document.querySelector("#correct");
     correctAnswer.style.backgroundColor = "#08ff31";
     this.lifes--;
-    this.checkStatus();
+    this.settingNextQuestion();
   }
 
   checkStatus() {
@@ -93,34 +109,15 @@ class Quiz {
       return "dead";
     } else {
       lifesImg.src = `./assets/${this.difficult}/${this.lifes}-lifes.png`;
-      this.settingNextQuestion();
-      setTimeout(() => {
-        printQuestion();
-        // this.startTimer();
-      }, 2000);
     }
   }
 
-  setupEnd() {
+  setResult() {
     if (this.correct / (this.correct + this.wrong) >= 0.65) {
       this.result = "good";
     } else {
       this.result = "bad";
     }
     endPic.src = `./assets/${this.difficult}/${this.result}.png`;
-  }
-
-  resetGame() {
-    this.name = "";
-    this.difficult = "";
-    this.lifes = 0;
-    this.questions = "";
-    this.roundQuestion = "";
-    this.round = 0;
-    this.streak = 0;
-    this.correct = 0;
-    this.wrong = 0;
-    this.result = 0;
-    this.intervalId = "";
   }
 }
