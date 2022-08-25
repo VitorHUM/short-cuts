@@ -1,3 +1,13 @@
+// ***TOTAL***
+// EASY = 28
+// NORMAL = 20
+// HARD = 12
+
+// ***ATUAL***
+// EASY = 15
+// NORMAL = 14
+// HARD = 12
+
 const questions = {
   easy: [
     {

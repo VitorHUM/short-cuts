@@ -86,6 +86,8 @@ function checkLose() {
 }
 
 btnHome.addEventListener("click", () => {
+  const endMsg = document.querySelector(`.${quiz.difficult}-${quiz.result}`);
+  endMsg.style.display = "none";
   quiz.resetGame();
   end.style.display = "none";
   menu.style.display = "flex";

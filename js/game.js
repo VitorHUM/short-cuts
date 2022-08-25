@@ -1,7 +1,5 @@
 const lifesImg = document.querySelector(".life");
 const endPic = document.querySelector(".end-picture");
-const audioCorrect = new Audio("./assets/audio/audio-correct.mp3");
-audioCorrect.volume = 0.1;
 
 class Quiz {
   constructor() {
@@ -23,7 +21,7 @@ class Quiz {
       this.difficult = difficult;
       this.lifes = 3;
       lifesImg.classList.add("life-easy");
-      lifesImg.src = `./assets/life/${this.difficult}-${this.lifes}-lifes.png`;
+      lifesImg.src = `./assets/${this.difficult}/${this.lifes}-lifes.png`;
       this.questions = questions.easy.sort(() => Math.random() - 0.5);
       this.roundQuestion = this.questions[this.round];
     }
@@ -31,7 +29,7 @@ class Quiz {
       this.difficult = difficult;
       this.lifes = 2;
       lifesImg.classList.add("life-normal");
-      lifesImg.src = `./assets/life/${this.difficult}-${this.lifes}-lifes.png`;
+      lifesImg.src = `./assets/${this.difficult}/${this.lifes}-lifes.png`;
       this.questions = questions.normal.sort(() => Math.random() - 0.5);
       this.roundQuestion = this.questions[this.round];
     }
@@ -39,7 +37,7 @@ class Quiz {
       this.difficult = difficult;
       this.lifes = 1;
       lifesImg.classList.add("life-hard");
-      lifesImg.src = `./assets/life/${this.difficult}-${this.lifes}-lifes.png`;
+      lifesImg.src = `./assets/${this.difficult}/${this.lifes}-lifes.png`;
       this.questions = questions.hard.sort(() => Math.random() - 0.5);
       this.roundQuestion = this.questions[this.round];
     }
@@ -66,6 +64,8 @@ class Quiz {
 
   checkAnswer(answer) {
     if (answer.innerText === this.roundQuestion.answer) {
+      const audioCorrect = new Audio(`./assets/${this.difficult}/correct.mp3`);
+      audioCorrect.volume = 0.1;
       audioCorrect.play();
       this.correct++;
       answer.style.backgroundColor = "#08ff31";
@@ -77,7 +77,9 @@ class Quiz {
   }
 
   wrongAnswer() {
-    audioCorrect.play();
+    const audioWrong = new Audio(`./assets/${this.difficult}/wrong.mp3`);
+    audioWrong.volume = 0.1;
+    audioWrong.play();
     this.streak = 0;
     this.wrong++;
     const correctAnswer = document.querySelector("#correct");
@@ -93,7 +95,7 @@ class Quiz {
       console.log("checkstatus dentro");
       return "dead";
     } else {
-      lifesImg.src = `./assets/life/${this.difficult}-${this.lifes}-lifes.png`;
+      lifesImg.src = `./assets/${this.difficult}/${this.lifes}-lifes.png`;
       this.settingNextQuestion();
       setTimeout(() => {
         printQuestion();

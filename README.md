@@ -18,7 +18,7 @@ The Player loses a life by getting a question wrong, or failing to answer it in 
 
 PRINT ERRANDO A QUESTAO
 
-The game ends when the player's lives reach 0.
+The game ends when the player's lives reach 0 or the questions run out.
 
 PRINT FIM DO JOGO
 
@@ -31,7 +31,7 @@ PRINT FIM DO JOGO
 [The game!](https://vitorhumoreira.github.io/short-cuts)
 [Slide show](link do slide aqui)
 
-#### Hope you like it! 👍
+#### Good luck in the game and I hope you like it! 👍
 
 [badge]: https://i.imgur.com/YxaQX63.png
 [link]: https://vitorhumoreira.github.io/short-cuts
