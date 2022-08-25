@@ -392,6 +392,13 @@ a {
   color: #ffffff;
 }
 
+.links .slides:hover,
+.links .slides:hover .tooltip,
+.links .slides:hover .tooltip::before {
+  background: #eeaa0b;
+  color: #ffffff;
+}
+
 .button {
   appearance: button;
   background-color: #d2d2d2;
@@ -444,8 +451,8 @@ a {
   transform: translate(2px, 2px);
 }
 
-@media (min-width: 768px) {
-  .button {
-    padding: 12px 50px;
+/* @media (max-width: 400px) {
+  .footer-container {
+    background-color: red;
   }
-}
+} */
