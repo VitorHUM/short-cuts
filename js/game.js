@@ -103,7 +103,7 @@ class Quiz {
   }
 
   setupEnd() {
-    if (this.correct / (this.correct + this.wrong) >= 0.7) {
+    if (this.correct / (this.correct + this.wrong) >= 0.65) {
       this.result = "good";
     } else {
       this.result = "bad";
