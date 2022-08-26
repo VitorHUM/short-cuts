@@ -8,7 +8,7 @@ The game was made to help the students in the class.
 
 ## The game
 
-To start, the player enters his name and selects a difficulty, player lives and the difficulty of the questions vary according to the difficulty selected previously.
+To start, the player enters his name and selects a difficulty, player lives and the difficulty of the questions vary according to the difficulty selected.
 
 <p align="center">
   <img src="https://i.imgur.com/S0qeDmd.png" alt="Game main menu"/>
@@ -40,8 +40,9 @@ The game ends when the player's lives reach 0 or the questions run out.
 
 ## Links
 
-[The game!](https://vitorhumoreira.github.io/short-cuts)
-[Slide show](link do slide aqui)
+[Game](https://vitorhumoreira.github.io/short-cuts)
+
+[Slide show](https://www.canva.com/design/DAFKWJTJfSA/OogDAnqZ39Sjm_UGCOmlMw/view?utm_content=DA[…]m_campaign=designshare&utm_medium=link2&utm_source=sharebutton)
 
 #### Good luck in the game and I hope you like it! 👍
 
