@@ -6,6 +6,7 @@ const game = document.querySelector(".game-container");
 const select = document.querySelector(".select-container");
 const about = document.querySelector(".about-container");
 const end = document.querySelector(".end-container");
+const score = document.querySelector(".score-container");
 
 // BUTTONS
 const btnPlay = document.querySelector("#btn-play");
@@ -17,6 +18,8 @@ const btnHome = document.querySelector("#home");
 
 // INPUTS & ASSETS
 const inputName = document.querySelector("#input-name");
+const modal = document.querySelector("#myModal");
+const modalClose = document.querySelector(".close-modal");
 const time = document.querySelector("#time");
 const question = document.querySelector(".question-display");
 const endName = document.querySelector(".end-name");
@@ -31,7 +34,10 @@ btnPlay.addEventListener("click", () => {
   btnDifficult.forEach((diffs) => {
     diffs.addEventListener("click", () => {
       if (inputName.value === "") {
-        alert(`FALTOU O NOME`);
+        modal.style.display = "block";
+        modalClose.addEventListener("click", () => {
+          modal.style.display = "none";
+        });
         return;
       }
 
@@ -79,11 +85,28 @@ function settingUpEnd() {
   game.style.display = "none";
   end.style.display = "flex";
   quiz.setResult();
-  endName.innerText = `${quiz.name}`;
-  endCorrect.innerText = `${quiz.correct}`;
-  endWrong.innerText = `${quiz.wrong}`;
-  const endMsg = document.querySelector(`.${quiz.difficult}-${quiz.result}`);
-  endMsg.style.display = "flex";
+
+  if (quiz.result === "good" && quiz.difficult === "easy") {
+    endName.innerText = `${quiz.name}`;
+    endCorrect.innerText = `${quiz.correct}`;
+    endWrong.innerText = `${quiz.wrong}`;
+    const endMsg = document.querySelector(`.${quiz.difficult}-${quiz.result}`);
+    endMsg.style.display = "flex";
+
+    score.style.alignItems = "flex-end";
+    score.style.padding = "0px 0px";
+    score.style.backgroundColor = "#FFFFFF";
+    score.style.borderRadius = "0px";
+    score.style.boxShadow = "0px 0px 0px #000000";
+    score.style.fontWeight = "300";
+    score.style.letterSpacing = "2px";
+  } else {
+    endName.innerText = `${quiz.name}`;
+    endCorrect.innerText = `${quiz.correct}`;
+    endWrong.innerText = `${quiz.wrong}`;
+    const endMsg = document.querySelector(`.${quiz.difficult}-${quiz.result}`);
+    endMsg.style.display = "flex";
+  }
 }
 
 btnHome.addEventListener("click", () => {
