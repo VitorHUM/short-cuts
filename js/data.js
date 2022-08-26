@@ -1,19 +1,34 @@
-// ***TOTAL***
-// EASY = 28
-// NORMAL = 20
-// HARD = 12
-
-// ***ATUAL***
-// EASY = 15
-// NORMAL = 14
-// HARD = 12
-
 const questions = {
   easy: [
     {
       question: "Atalho para: Copiar linha ou seleção",
       alternatives: ["Ctrl + X", "Ctrl + Z", "Ctrl + V", "Ctrl + C"],
       answer: "Ctrl + C",
+    },
+    {
+      question: "Comando do terminal para: Mudar de pasta",
+      alternatives: [
+        "cd + pasta",
+        "ls + pasta",
+        "pwd + pasta",
+        "mkdir + pasta",
+      ],
+      answer: "cd + pasta",
+    },
+    {
+      question: "Comando do terminal para: Listar os arquivos da pasta",
+      alternatives: ["cd", "ls", "pwd", "mkdir"],
+      answer: "ls",
+    },
+    {
+      question: "Comando do terminal para: Criar pasta",
+      alternatives: ["cd", "pwd", "rmdir", "mkdir"],
+      answer: "mkdir",
+    },
+    {
+      question: "Comando do terminal para: Excluir pasta",
+      alternatives: ["ls", "pwd", "rmdir", "mkdir"],
+      answer: "rmdir",
     },
     {
       question: "Atalho para: Selecionar linha atual",
@@ -138,9 +153,30 @@ const questions = {
       answer: "Ctrl + Y",
     },
     {
+      question:
+        "Atalho para: Adicionar o cursos a todas as seleções correspondentes",
+      alternatives: [
+        "Ctrl + Shift + L",
+        "Ctrl + Shift + F",
+        "Ctrl + Shift + D",
+        "Ctrl + D",
+      ],
+      answer: "Ctrl + Shift + L",
+    },
+    {
       question: "Atalho para: Voltar o mouse para a posição anterior",
       alternatives: ["Ctrl + U", "Ctrl + M", "Ctrl + L", "Ctrl + B"],
       answer: "Ctrl + U",
+    },
+    {
+      question: "Atalho para: Fechar todas abas",
+      alternatives: [
+        "Ctrl + K W",
+        "Ctrl + Shift + T",
+        "Ctrl + W",
+        "Ctrl + Shift + W",
+      ],
+      answer: "Ctrl + K W",
     },
     {
       question: "Atalho para: Dividir a tela",

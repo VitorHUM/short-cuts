@@ -118,6 +118,6 @@ class Quiz {
     } else {
       this.result = "bad";
     }
-    endPic.src = `./assets/${this.difficult}/${this.result}.png`;
+    endPic.src = `./assets/${this.difficult}/${this.result}.jpg`;
   }
 }

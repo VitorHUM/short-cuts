@@ -146,6 +146,10 @@ label {
   margin: 0 8px;
 }
 
+.vitor-char {
+  margin-bottom: 4px;
+}
+
 .game-container {
   display: none;
   justify-content: center;
@@ -255,8 +259,9 @@ label {
 }
 
 .end-picture {
-  display: none;
-  width: 150px;
+  margin: 16px 0;
+  display: flex;
+  width: 60%
 }
 
 .about-container {
