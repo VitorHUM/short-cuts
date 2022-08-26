@@ -40,9 +40,9 @@ The game ends when the player's lives reach 0 or the questions run out.
 
 ## Links
 
-[Game](https://vitorhumoreira.github.io/short-cuts)
+<a href="https://vitorhumoreira.github.io/short-cuts" target="_blank">Game</a>
 
-[Slide show](https://www.canva.com/design/DAFKWJTJfSA/OogDAnqZ39Sjm_UGCOmlMw/view?utm_content=DA[…]m_campaign=designshare&utm_medium=link2&utm_source=sharebutton)
+<a href="https://www.canva.com/design/DAFKWJTJfSA/OogDAnqZ39Sjm_UGCOmlMw/view?utm_content=DA[…]m_campaign=designshare&utm_medium=link2&utm_source=sharebutton" target="_blank">Slideshow</a>
 
 #### Good luck in the game and I hope you like it! 👍
 
