@@ -15,7 +15,7 @@ To start, the player enters his name and selects a difficulty, player lives and 
 </p>
 
 <p align="center">
-  <img src="PRINT DA SELECT" alt="Game in character select menu"/>
+  <img src="https://i.imgur.com/CwVA7Mm.png" alt="Game in character select menu"/>
 </p>
 
 <p align="center">
@@ -25,13 +25,13 @@ To start, the player enters his name and selects a difficulty, player lives and 
 The Player loses a life by getting a question wrong, or failing to answer it in the required time.
 
 <p align="center">
-  <img src="PRINT ERRANDO QUESTAO E PERDENDO VIDA" alt="Chosing the wrong answer"/>
+  <img src="https://i.imgur.com/vTc9AOp.png" alt="Chosing the wrong answer"/>
 </p>
 
 The game ends when the player's lives reach 0 or the questions run out.
 
 <p align="center">
-  <img src="PRINT DO FINAL DO JOGO" alt="End game section"/>
+  <img src="https://i.imgur.com/gMvaUId.png" alt="End game section"/>
 </p>
 
 ## **Built With**
