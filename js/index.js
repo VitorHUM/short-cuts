@@ -18,8 +18,8 @@ const btnHome = document.querySelector("#home");
 
 // INPUTS & ASSETS
 const inputName = document.querySelector("#input-name");
-const modal = document.querySelector("#myModal");
-const modalClose = document.querySelector(".close-modal");
+const modal = document.querySelector("#modal");
+const modalClose = document.querySelector(".btn-close-modal");
 const time = document.querySelector("#time");
 const question = document.querySelector(".question-display");
 const endName = document.querySelector(".end-name");

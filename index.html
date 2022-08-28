@@ -18,37 +18,46 @@
   </header>
 
   <main>
-    <ul class="main-container">
+    <div class="main-container">
       <section class="menu-container">
         <button id="btn-play" class="button">JOGAR</button>
         <button id="btn-about" class="button">SOBRE</button>
       </section>
+
+      <div id="modal" class="modal-container">
+        <div class="modal-content">
+          <h3>É necessário inserir o nome para jogar.</h3>
+          <span class="btn-close-modal">&times;</span>
+        </div>
+      </div>
 
       <section class="select-container">
         <div class="name-container">
           <label for="input-name">NOME: </label>
           <input type="text" id="input-name" placeholder="Seu nome">
         </div>
-        <div id="myModal" class="modal">
-          <div class="modal-content">
-            <h3>Faltou digitar o nome ai poh !</h3>
-            <span class="close-modal">&times;</span>
-          </div>
-        </div>
+
         <h2 class="select-difficult">SELECIONE A DIFICULDADE</h2>
+
         <div class="difficults">
           <div class="difficult">
-            <img class="vitor-char" src="./assets/easy/select.png" alt="Vitor char">
+            <img src="./assets/easy/select.png" alt="Vitor char" class="vitor-char">
             <button class="button btn-difficult" value="easy">VITOR (FÁCIL)</button>
           </div>
+
           <div class="vr"></div>
+          <hr>
+
           <div class="difficult">
-            <img src="./assets/normal/select.png" alt="Jino char">
+            <img src="./assets/normal/select.png" alt="Jino char" class="jino-char">
             <button class="button btn-difficult" value="normal">JINO (NORMAL)</button>
           </div>
+
           <div class="vr"></div>
+          <hr>
+
           <div class="difficult">
-            <img src="./assets/hard/select.png" alt="Karen char">
+            <img src="./assets/hard/select.png" alt="Karen char" class="karen-char">
             <button class="button btn-difficult" value="hard">KAREN (DIFÍCIL)</button>
           </div>
         </div>
@@ -60,53 +69,62 @@
           <img src="./assets/clock.png" alt="clock" class="clock">
           <span id="time">10</span>
         </div>
+
         <div class="question-box">
           <h2 class="question-display">PERGUNTA</h2>
         </div>
-        <button id="" class="button-alt btn-alternative">Alternativa 1</button>
-        <button id="" class="button-alt btn-alternative">Alternativa 2</button>
-        <button id="" class="button-alt btn-alternative">Alternativa 3</button>
-        <button id="" class="button-alt btn-alternative">Alternativa 4</button>
-      </section>
 
-      <img src="" alt="" width="100px">
+        <div class="alt-box">
+          <button id="" class="button-alt btn-alternative">Alternativa 1</button>
+          <button id="" class="button-alt btn-alternative">Alternativa 2</button>
+          <button id="" class="button-alt btn-alternative">Alternativa 3</button>
+          <button id="" class="button-alt btn-alternative">Alternativa 4</button>
+        </div>
+      </section>
 
       <section class="end-container">
         <div class="score-container">
           <h2>FIM DE JOGO</h2>
+
           <h3><span class="end-name"></span> você acertou <span class="end-correct"></span> questões e errou <span class="end-wrong"></span>.</h3>
+
           <p class="p easy-good">Vitor ficou tão impressionado com seu desempenho que esqueceu de fazer o CSS dessa página!</p>
           <p class="p easy-bad">Vitor ficou puto com seu desempenho patético!</p>
           <p class="p normal-good">Jino gostou tanto do seu desempenho que até te contou a resposta da charada!</p>
           <p class="p normal-bad">Jino achou melhor você se sentar ao lado dele.</p>
           <p class="p hard-good">Karen ficou tão impressionada com seu desempenho que até foi almoçar!</p>
           <p class="p hard-bad">Karen ficou tão decepcionada com seu desempenho que até foi pegar um café!</p>
+
           <img src="" alt="" class="end-picture">
         </div>
+
         <button id="home" class="button">MENU</button>
       </section>
 
       <section class="about-container">
         <ul class="about-content">
           <li>Jogo desenvolvido para o #1 Projeto do bootcamp de Web Development na Ironhack São Paulo, turma #85WDFT.</li>
-          <li>Inpirado no famoso jogo de celular "Perguntados", nosso jogo consiste em um quiz sobre atalhos das ferramentas que utilizamos no curso. O jogo foi feito para auxiliar os alunos da turma.</li>
-          <li>Para começar o jogador insere seu nome e seleciona uma dificuldade, as vidas do jogador e a dificuldade das questões variam de acordo com a dificuldade selecionada anteriormente.</li>
-          <li>O Jogador perde uma vida ao errar uma questão, ou deixar de respondê-la no tempo necessário.</li>
+          <li>Inpirado no famoso jogo de celular "Perguntados", nosso jogo consiste em um quiz sobre atalhos das ferramentas que utilizamos no curso.</li>
+          <li>O jogo foi feito para auxiliar os alunos da turma.</li>
+          <li>Para começar o jogador insere seu nome e seleciona uma dificuldade, as vidas do jogador e a dificuldade das questões variam de acordo com a dificuldade selecionada.</li>
+          <li>O Jogador perde uma vida ao errar uma questão ou deixar de respondê-la no tempo necessário.</li>
           <li>O jogo acaba quando as vidas do jogador chegarem a 0 ou acabaram as questões.</li>
           <li>Boa sorte no jogo e espero que gostem!</li>
         </ul>
+
         <div class="btn-back-container">
           <button id="btn-back" class="button">
-            < MENU</button>
+            &lt MENU</button>
         </div>
       </section>
-      </div>
+    </div>
   </main>
 
   <footer>
     <div class="footer-container">
       <h5>Desenvolvido por <a href="https://vitorhumoreira.github.io/" target="_blank">Vitor Hugo</a> - 2022.</h5>
-      <ul class="links">
+
+      <ul class="footer-icons">
         <li class="icon github">
           <span class="tooltip">GitHub</span>
           <a href="https://github.com/VitorHUMoreira" target="_blank"><i class="fab fa-github"></i></a>
@@ -115,18 +133,20 @@
           <span class="tooltip">LinkedIn</span>
           <a href="https://www.linkedin.com/in/vitor-hugo-ulson-moreira/" target="_blank"><i class="fab fa-linkedin"></i></a>
         </li>
-        <li class="icon slides">
-          <span class="tooltip">Slides</span>
+        <li class="icon slideshow">
+          <span class="tooltip">Slideshow</span>
           <a href="https://www.canva.com/design/DAFKWJTJfSA/OogDAnqZ39Sjm_UGCOmlMw/view?utm_content=DAFKWJTJfSA&utm_campaign=designshare&utm_medium=link2&utm_source=sharebutton#9" target="_blank"><i class="fa-solid fa-person-chalkboard"></i></a>
         </li>
       </ul>
     </div>
   </footer>
 
+
   <script src="https://kit.fontawesome.com/0d0f8ddc35.js" crossorigin="anonymous"></script>
   <script src="./js/data.js"></script>
   <script src="./js/game.js"></script>
   <script src="./js/index.js"></script>
+
 </body>
 
 </html>
