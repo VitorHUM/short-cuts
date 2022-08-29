@@ -4,6 +4,7 @@ const quiz = new Quiz();
 const menu = document.querySelector(".menu-container");
 const game = document.querySelector(".game-container");
 const select = document.querySelector(".select-container");
+const platform = document.querySelector(".plataform-container");
 const about = document.querySelector(".about-container");
 const end = document.querySelector(".end-container");
 const score = document.querySelector(".score-container");
@@ -11,6 +12,7 @@ const score = document.querySelector(".score-container");
 // BUTTONS
 const btnPlay = document.querySelector("#btn-play");
 const btnDifficult = document.querySelectorAll(".btn-difficult");
+const btnPlatform = document.querySelectorAll(".btn-platform");
 const btnAlternative = document.querySelectorAll(".btn-alternative");
 const btnAbout = document.querySelector("#btn-about");
 const btnBack = document.querySelector("#btn-back");
@@ -42,9 +44,16 @@ btnPlay.addEventListener("click", () => {
       }
 
       select.style.display = "none";
-      game.style.display = "flex";
+      platform.style.display = "flex";
 
-      setupGame(inputName.value, diffs.value);
+      btnPlatform.forEach((plats) => {
+        plats.addEventListener("click", () => {
+          platform.style.display = "none";
+          game.style.display = "flex";
+
+          setupGame(inputName.value, diffs.value, plats.value);
+        });
+      });
     });
   });
 });
@@ -58,8 +67,8 @@ btnAbout.addEventListener("click", () => {
   });
 });
 
-function setupGame(name, difficult) {
-  quiz.settingUpGame(name, difficult);
+function setupGame(name, difficult, platform) {
+  quiz.settingUpGame(name, difficult, platform);
   printQuestion();
 }
 

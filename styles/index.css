@@ -214,6 +214,50 @@ hr {
   margin-bottom: 4px;
 }
 
+.plataform-container {
+  display: none;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.select-platform {
+  margin-bottom: 12px;
+  text-shadow: 2px 2px 2px var(--dark-grey);
+}
+
+.platforms {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 32px;
+}
+
+.platforms img {
+  width: 100px;
+}
+
+.platform {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.platform img:hover {
+  opacity: 1;
+  -webkit-animation: flash 1s;
+  animation: flash 1s;
+}
+
+.windows-logo {
+  margin-bottom: 16px;
+}
+
+.macos-logo {
+  margin-bottom: 48px;
+}
+
 .game-container {
   display: none;
   justify-content: center;
@@ -571,6 +615,10 @@ a:nth-child(1) {
     width: 140px;
   }
 
+  .platforms img {
+    width: 90px;
+  }
+
   .life-time {
     width: 30vw;
   }
@@ -601,6 +649,14 @@ a:nth-child(1) {
   }
 
   .difficults {
+    gap: 12px;
+  }
+
+  .platforms img {
+    width: 75px;
+  }
+
+  .platforms {
     gap: 12px;
   }
 
@@ -654,6 +710,19 @@ a:nth-child(1) {
     gap: 4px;
   }
 
+  .platforms {
+    flex-direction: column;
+    gap: 4px;
+  }
+
+  .platforms img {
+    width: 60px;
+  }
+
+  .platforms {
+    gap: 4px;
+  }
+
   .life-time {
     width: 55vw;
   }
@@ -698,6 +767,15 @@ a:nth-child(1) {
 
   .difficults img {
     width: 80px;
+  }
+
+  .platforms {
+    flex-direction: column;
+    gap: 4px;
+  }
+
+  .platforms img {
+    width: 60px;
   }
 
   .life-time {

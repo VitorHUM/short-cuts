@@ -16,14 +16,20 @@ class Quiz {
     this.intervalId;
   }
 
-  settingUpGame(name, difficult) {
+  settingUpGame(name, difficult, platform) {
     this.name = name;
     if (difficult === "easy") {
       this.difficult = difficult;
       this.lifes = 3;
       lifesImg.classList.add("life-easy");
       lifesImg.src = `./assets/${this.difficult}/${this.lifes}-lifes.png`;
-      this.questions = questions.easy.sort(() => Math.random() - 0.5);
+      if (platform === "windows") {
+        this.questions = questions.windows[0].easy.sort(
+          () => Math.random() - 0.5
+        );
+      } else {
+        this.questions = questions.mac[0].easy.sort(() => Math.random() - 0.5);
+      }
       this.roundQuestion = this.questions[this.round];
     }
     if (difficult === "normal") {
@@ -31,7 +37,15 @@ class Quiz {
       this.lifes = 2;
       lifesImg.classList.add("life-normal");
       lifesImg.src = `./assets/${this.difficult}/${this.lifes}-lifes.png`;
-      this.questions = questions.normal.sort(() => Math.random() - 0.5);
+      if (platform === "windows") {
+        this.questions = questions.windows[0].normal.sort(
+          () => Math.random() - 0.5
+        );
+      } else {
+        this.questions = questions.mac[0].normal.sort(
+          () => Math.random() - 0.5
+        );
+      }
       this.roundQuestion = this.questions[this.round];
     }
     if (difficult === "hard") {
@@ -39,7 +53,13 @@ class Quiz {
       this.lifes = 1;
       lifesImg.classList.add("life-hard");
       lifesImg.src = `./assets/${this.difficult}/${this.lifes}-lifes.png`;
-      this.questions = questions.hard.sort(() => Math.random() - 0.5);
+      if (platform === "windows") {
+        this.questions = questions.windows[0].hard.sort(
+          () => Math.random() - 0.5
+        );
+      } else {
+        this.questions = questions.mac[0].hard.sort(() => Math.random() - 0.5);
+      }
       this.roundQuestion = this.questions[this.round];
     }
   }
