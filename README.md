@@ -1,12 +1,12 @@
 # `<short></cuts>` [![badge]][link]
 
-## Introduction
+## 💡 Introduction
 
 Game developed for "Project #1 - The Game" of the Web Development bootcamp at Ironhack São Paulo, class #85WDFT.
 Inspired by the famous mobile game "Trivia Crack", our game consists of a quiz about shortcuts of the tools that we use in the course.
 The game was made to help the students in the class.
 
-## The game
+## 🎮 The game
 
 To start, the player enters his name and selects a difficulty, player lives and the difficulty of the questions vary according to the difficulty selected.
 
@@ -34,9 +34,12 @@ The game ends when the player's lives reach 0 or the questions run out.
   <img src="https://i.imgur.com/gMvaUId.png" alt="End game section"/>
 </p>
 
-## **Built With**
-
-<code><img height="30" src="https://raw.githubusercontent.com/github/explore/80688e429a7d4ef2fca1e82350fe8e3517d3494d/topics/html/html.png"></code><code><img height="30" src="https://raw.githubusercontent.com/github/explore/80688e429a7d4ef2fca1e82350fe8e3517d3494d/topics/css/css.png"></code><code><img height="30" src="https://raw.githubusercontent.com/github/explore/80688e429a7d4ef2fca1e82350fe8e3517d3494d/topics/javascript/javascript.png"></code><code><img height="30" src="https://raw.githubusercontent.com/github/explore/80688e429a7d4ef2fca1e82350fe8e3517d3494d/topics/visual-studio-code/visual-studio-code.png"></code><code><img height="30" src="https://raw.githubusercontent.com/github/explore/80688e429a7d4ef2fca1e82350fe8e3517d3494d/topics/git/git.png"></code>
+## ⚒️ **Built With**
+<p align="center">
+    <img height="40" src="https://cdn.worldvectorlogo.com/logos/html-1.svg" alt="html"> &nbsp
+    <img height="40" src="https://cdn.worldvectorlogo.com/logos/css-3.svg" alt="css"> &nbsp
+    <img height="40" src="https://cdn.worldvectorlogo.com/logos/logo-javascript.svg" alt="javascript"> &nbsp
+</p>
 
 ## Links
 
