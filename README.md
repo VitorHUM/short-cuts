@@ -34,14 +34,14 @@ The game ends when the player's lives reach 0 or the questions run out.
   <img src="https://i.imgur.com/gMvaUId.png" alt="End game section"/>
 </p>
 
-## ⚒️ **Built With**
+## ⚒️ Built With
 <p align="center">
     <img height="40" src="https://cdn.worldvectorlogo.com/logos/html-1.svg" alt="html"> &nbsp
     <img height="40" src="https://cdn.worldvectorlogo.com/logos/css-3.svg" alt="css"> &nbsp
     <img height="40" src="https://cdn.worldvectorlogo.com/logos/logo-javascript.svg" alt="javascript"> &nbsp
 </p>
 
-## Links
+## 🔗 Links
 
 <a href="https://vitorhumoreira.github.io/short-cuts" target="_blank">Game</a>
 
