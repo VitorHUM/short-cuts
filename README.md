@@ -43,11 +43,11 @@ The game ends when the player's lives reach 0 or the questions run out.
 
 ## 🔗 Links
 
-<a href="https://vitorhumoreira.github.io/short-cuts" target="_blank">Game</a>
+<a href="https://vitorhum.github.io/short-cuts" target="_blank">Game</a>
 
 <a href="https://www.canva.com/design/DAFKWJTJfSA/OogDAnqZ39Sjm_UGCOmlMw/view?utm_content=DA[…]m_campaign=designshare&utm_medium=link2&utm_source=sharebutton" target="_blank">Slideshow</a>
 
 #### Good luck in the game and I hope you like it! 👍
 
 [badge]: https://i.imgur.com/YxaQX63.png
-[link]: https://vitorhumoreira.github.io/short-cuts
+[link]: https://vitorhum.github.io/short-cuts
